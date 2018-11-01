@@ -68,8 +68,8 @@ Confirm that this is working by visiting the random question page and answering 
 ![Browse](readimages/fifth.PNG)
 
 Then click refresh
-![Refrect](readimages/sixth.PNG)
 
+![Refrect](readimages/sixth.PNG)
     
 Make sure there is a record corresponding to whether or not you got the answer correct.
 
