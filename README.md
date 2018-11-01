@@ -1,3 +1,5 @@
+# Connecting your Flask App to a Database
+
 ## Introduction
 In order for your web application to do anything useful you will need to use a database. Variables disappear if your program shuts down or your computer shuts off, so you need to store data somewhere that will keep it safe and get you what you want efficiently.
 
