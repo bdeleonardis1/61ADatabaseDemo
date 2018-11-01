@@ -16,8 +16,14 @@ Navigate to the folder that your app.py file is in and save it under whatever na
 ![Save Database](readimages/second.PNG)
  
 ## Step 3 – Create the table
-Right after you create the database a prompt should come up for creating a table. It should  look like this
+Right after you create the database a prompt should come up for creating a table. It should look like this:
+
+![Create Table](readimages/third.PNG)
+
 Name the table Answers and a column called correct of type integer.  Your prompt should look like this if you filled out the fields correctly:
+
+![Create Table](readimages/fourth.PNG)
+
 Click Ok, and you’ve created a table!
 
 ## Step 4 – Add the boilerplate database access code
@@ -57,10 +63,12 @@ con.commit()
 The first line just calls the get_db() line that we added before to get a database connection. The next line returns what is called a cursor. A cursor actually enables us to run queries and obtain the records returned. If the question is correct we want to insert a 1, else we want to insert a 0.
 cur.execute() executes a line of SQL, but it doesn’t save it to your database. That is why you need to run con.commit() to actually save the update.
 
-Confirm that this is working by visiting a URL and answering a question. Then go back to your SQLite browser 
- 
- 
-Click the Browse Data tab and then click the refresh button.
+Confirm that this is working by visiting a URL and answering a question. Then go back to your SQLite browser and click the Browse Data tab:
+
+![Browse](readimages/fifth.PNG)
+
+Then click refresh
+![Refrect](readimages/sixth.PNG)
 
     
 Make sure there is a record corresponding to whether or not you got the answer correct.
@@ -81,5 +89,5 @@ def get_stats():
 
 We’re just adding a route the same way we did in the workshop. Then we get a cursor like we did before. And then we use the cursor to execute an SQL query. We use cur.fetchone() to get the first record (there will only ever be one because COUNT() counts all the rows). This returns a tuple with the values for each column. Then we pick the first element (index 0) which corresponds to the only column to get how many correct/incorrect answers there are. Notice we don’t have to run con.commit() because we are not updating our database and don’t have to save anything. The last line returns a text response of some data.
 
-Questions?
+## Questions?
 Email bdeleonardis@berkeley.edu or ask in the slack group.
