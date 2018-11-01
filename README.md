@@ -73,6 +73,8 @@ Then click refresh
     
 Make sure there is a record corresponding to whether or not you got the answer correct.
 
+After adding the boilerplate, every other SQL query we want to execute will follow this same pattern. Get a connection, get a cursor, execute a query, and commit (if running an INSERT/UPDATE and not just a SELECT).
+
 ## Step 6 – Add a stats route.
 
 ``` 
@@ -87,7 +89,7 @@ def get_stats():
     return "Users have answered {} correctly and {} incorrectly for {:.2f}%".format(correct, incorrect, correct / (correct + incorrect))
 ```
 
-We’re just adding a route the same way we did in the workshop. Then we get a cursor like we did before. And then we use the cursor to execute an SQL query. We use cur.fetchone() to get the first record (there will only ever be one because COUNT() counts all the rows). This returns a tuple with the values for each column. Then we pick the first element (index 0) which corresponds to the only column to get how many correct/incorrect answers there are. Notice we don’t have to run con.commit() because we are not updating our database and don’t have to save anything. The last line returns a text response of some data.
+We add a route the same way we did in the workshop. Then we get a cursor like we did before (combining getting the connection and the cursor in one line). Then we use the cursor to execute an SQL query. We use cur.fetchone() to get the first record (there will only ever be one because COUNT() counts all the rows). This returns a tuple with the values for each column. Then we pick the first element (index 0) which corresponds to how many correct/incorrect answers there are. Notice we don’t have to run con.commit() because we are not updating our database and don’t have to save anything. The last line returns a text response summary of the data.
 
 ## Questions?
 Email bdeleonardis@berkeley.edu or ask in the slack group.
