@@ -1,7 +1,7 @@
 ## Introduction
 In order for your web application to do anything useful you will need to use a database. Variables disappear if your program shuts down or your computer shuts off, so you need to store data somewhere that will keep it safe and get you what you want efficiently.
 
-For this tutorial you can add the code to the jeopardy webapp you made during the workshop. If you get stuck, this repository has the finished version of the code I’ll go over in the document.
+For this tutorial you can add the code to the jeopardy webapp you made during the workshop. If you get stuck, this repository has the finished version of the code I’ll go over in the document. I will not be teaching SQL in this tutorial because you will learn that in CS61A soon enough, the purpose of this is to show you how to connnect your flask app to a database.
 
 ## Step 1 - Download SQLite Browser
 Download the appropriate version for your operating system from here: [SQLiteBrowser](https://sqlitebrowser.org). If you are on windows make sure you pick the correct one (probably the 64 bit version).
