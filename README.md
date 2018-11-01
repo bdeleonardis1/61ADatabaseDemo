@@ -4,7 +4,7 @@ In order for your web application to do anything useful you will need to use a d
 For this tutorial you can add the code to the jeopardy webapp you made during the workshop. If you get stuck, this repository has the finished version of the code I’ll go over in the document.
 
 ## Step 1 - Download SQLite Browser
-Download the appropriate version for your operating system from here:  <a href="https://sqlitebrowser.org" target="_blank">SQLiteBrowser</a>. If you are on windows make sure you pick the correct one (probably the 64 bit version).
+Download the appropriate version for your operating system from here: [SQLiteBrowser](https://sqlitebrowser.org){:target="_blank"}. If you are on windows make sure you pick the correct one (probably the 64 bit version).
 
 ## Step 2 - Create the Database
 Open SQLite Browser and click New Database.
@@ -60,7 +60,7 @@ else:
 con.commit()
 ``` 
 
-The first line just calls the get_db() line that we added before to get a database connection. The next line returns what is called a cursor. A cursor actually enables us to run queries and obtain the records returned. If the question is correct we want to insert a 1, else we want to insert a 0.
+The first line just calls the get_db() function that we added before to get a database connection. The next line returns what is called a cursor. A cursor actually enables us to run queries and obtain the records returned. If the question is correct we want to insert a 1, else we want to insert a 0.
 cur.execute() executes a line of SQL, but it doesn’t save it to your database. That is why you need to run con.commit() to actually save the update.
 
 Confirm that this is working by visiting a URL and answering a question. Then go back to your SQLite browser and click the Browse Data tab:
