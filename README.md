@@ -1,21 +1,26 @@
-#Introduction - Why a database?
+## Introduction - Why a database?
 In order for your web application to do anything useful you will need to use a database. Variables disappear if your program shuts down or your computer shuts off, so you need to store data somewhere that will keep it safe and get you what you want efficiently.
 
 For this tutorial you can add the code to the jeopardy webapp you made during the workshop. If you get stuck, this repository has the finished version of the code I’ll go over in the document.
 
-#Step 1 - Download SQLite Browser
+## Step 1 - Download SQLite Browser
 Download the appropriate version for your operating system from here: https://sqlitebrowser.org/. If you are on windows make sure you pick the correct one (probably the 64 bit version.
 
-#Step 2 - Create the Database
+## Step 2 - Create the Database
 Open SQLite Browser and click New Database.
+
+![New Database](readimages/first.PNG)
+
 Navigate to the folder that your app.py file is in and save it under whatever name you want. I called mine jeopardydb if you want to follow the tutorial exactly.
+
+![Save Database](readimages/second.PNG)
  
-#Step 3 – Create the table
+## Step 3 – Create the table
 Right after you create the database a prompt should come up for creating a table. It should  look like this
 Name the table Answers and a column called correct of type integer.  Your prompt should look like this if you filled out the fields correctly:
 Click Ok, and you’ve created a table!
 
-#Step 4 – Add the boilerplate database access code
+## Step 4 – Add the boilerplate database access code
 
 ```
 import sqlite3
@@ -36,7 +41,7 @@ def close_connection(exception):
 
 Copy and paste the above code into the app.py file. I won’t go into too much detail on what the code does, but it either creates a new database connection or returns the already existing one. When the app terminates the close connection function will shut down the connection. There is no way to test after this stage, just move onto step 5.
 
-#Step 5 – Insert into the Answers table
+## Step 5 – Insert into the Answers table
 Modify your check_answer function by adding the following lines of code right before the return statement.
 
 ```
@@ -60,7 +65,7 @@ Click the Browse Data tab and then click the refresh button.
     
 Make sure there is a record corresponding to whether or not you got the answer correct.
 
-#Step 6 – Add a stats route.
+## Step 6 – Add a stats route.
 
 ``` 
 @app.route('/stats', methods=['GET'])
