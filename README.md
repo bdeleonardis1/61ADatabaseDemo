@@ -4,7 +4,7 @@ In order for your web application to do anything useful you will need to use a d
 For this tutorial you can add the code to the jeopardy webapp you made during the workshop. If you get stuck, this repository has the finished version of the code I’ll go over in the document.
 
 ## Step 1 - Download SQLite Browser
-Download the appropriate version for your operating system from here: <a href="sqlitebrowser.org" target="_blank">SQLiteBrowser</a>. If you are on windows make sure you pick the correct one (probably the 64 bit version).
+Download the appropriate version for your operating system from here: <a href="https://sqlitebrowser.org" target="_blank">SQLiteBrowser</a>. If you are on windows make sure you pick the correct one (probably the 64 bit version).
 
 ## Step 2 - Create the Database
 Open SQLite Browser and click New Database.
