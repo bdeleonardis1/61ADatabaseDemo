@@ -62,8 +62,9 @@ else:
 con.commit()
 ``` 
 
-The first line just calls the get_db() function that we added before to get a database connection. The next line returns what is called a cursor. A cursor actually enables us to run queries and obtain the records returned. If the question is correct we want to insert a 1, else we want to insert a 0.
-cur.execute() executes a line of SQL, but it doesn’t save it to your database. That is why you need to run con.commit() to actually save the update.
+The first line calls the get_db() function that we added before to get a database connection. The next line returns what is called a cursor. A cursor enables us to run queries and obtain the records returned. You can use the same database connection for the life of the program, but should get new cursors for every query you run. This is why get_db() returns the connection if it is already created, but we call .cursor() to get a new cursor every time we want to run a query.
+
+If the question is correct we want to insert a 1, else we want to insert a 0. cur.execute() executes a line of SQL, but it doesn’t save it to your database. That is why you need to run con.commit() - to actually save the update.
 
 Confirm that this is working by visiting the random question page and answering a question. Then go back to your SQLite browser and click the Browse Data tab:
 
@@ -75,10 +76,9 @@ Then click refresh
     
 Make sure there is a record corresponding to whether or not you got the answer correct.
 
-After adding the boilerplate, every other SQL query we want to execute will follow this same pattern. Get a connection, get a cursor, execute a query, and commit (if running an INSERT/UPDATE and not just a SELECT).
+After adding the boilerplate, every other SQL query we want to execute will follow this same pattern: get a connection, get a cursor, execute a query, and commit (if running an INSERT/UPDATE/DELETE and not just a SELECT).
 
-## Step 6 – Add a stats route.
-
+## Step 6 – Add a stats route
 ``` 
 @app.route('/stats', methods=['GET'])
 def get_stats():
@@ -91,7 +91,7 @@ def get_stats():
     return "Users have answered {} correctly and {} incorrectly for {:.2f}%".format(correct, incorrect, correct / (correct + incorrect))
 ```
 
-We add a route the same way we did in the workshop. Then we get a cursor like we did before (combining getting the connection and the cursor in one line). Then we use the cursor to execute an SQL query. We use cur.fetchone() to get the first record (there will only ever be one because COUNT() counts all the rows). This returns a tuple with the values for each column. Then we pick the first element (index 0) which corresponds to how many correct/incorrect answers there are. Notice we don’t have to run con.commit() because we are not updating our database and don’t have to save anything. The last line returns a text response summary of the data.
+We add a route the same way we did in the workshop. Then we get a cursor like we did before (combining getting the connection and a cursor in one line). Then we use the cursor to execute an SQL query. We use cur.fetchone() to get the first record returned by this statement (there will only ever be one because COUNT() combines all the rows into one). This returns a tuple with the values for each column that our query returns. Then we select the first and only column (index 0) which corresponds to how many correct/incorrect answers there are. Notice we do not have to run con.commit() because we are not updating our database so we therefore do not have to save anything. The last line returns a text response summary of the data.
 
 ## Questions?
 Email bdeleonardis@berkeley.edu or ask in the slack group.
