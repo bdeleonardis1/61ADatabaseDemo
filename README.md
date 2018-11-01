@@ -63,7 +63,7 @@ con.commit()
 The first line just calls the get_db() function that we added before to get a database connection. The next line returns what is called a cursor. A cursor actually enables us to run queries and obtain the records returned. If the question is correct we want to insert a 1, else we want to insert a 0.
 cur.execute() executes a line of SQL, but it doesn’t save it to your database. That is why you need to run con.commit() to actually save the update.
 
-Confirm that this is working by visiting a URL and answering a question. Then go back to your SQLite browser and click the Browse Data tab:
+Confirm that this is working by visiting the random question page and answering a question. Then go back to your SQLite browser and click the Browse Data tab:
 
 ![Browse](readimages/fifth.PNG)
 
