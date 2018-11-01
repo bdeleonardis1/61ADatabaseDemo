@@ -30,7 +30,7 @@ Click Ok, and you’ve created a table!
 
 ## Step 4 – Add the boilerplate database access code
 
-```
+```python
 import sqlite3
 DATABASE = 'jeopardydb.db'
 
@@ -52,7 +52,7 @@ Copy and paste the above code into the app.py file. I won’t go into too much d
 ## Step 5 – Insert into the Answers table
 Modify your check_answer function by adding the following lines of code right before the return statement.
 
-```
+```python
 con = get_db()
 cur = con.cursor()
 if correct_answer_string == 'Correct':
@@ -79,7 +79,7 @@ Make sure there is a record corresponding to whether or not you got the answer c
 After adding the boilerplate, every other SQL query we want to execute will follow this same pattern: get a connection, get a cursor, execute a query, and commit (if running an INSERT/UPDATE/DELETE and not just a SELECT).
 
 ## Step 6 – Add a stats route
-``` 
+```python
 @app.route('/stats', methods=['GET'])
 def get_stats():
     cur = get_db().cursor()
