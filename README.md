@@ -13,7 +13,7 @@ Open SQLite Browser and click New Database.
 
 ![New Database](readimages/first.PNG)
 
-Navigate to the folder that your app.py file is in and save it under whatever name you want. I called mine jeopardydb if you want to follow the tutorial exactly.
+Navigate to the folder that your app.py file is in and save it under whatever name you want. I called mine jeopardydb if you want to follow the tutorial exactly. SQLite saves your entire database into a file.
 
 ![Save Database](readimages/second.PNG)
  
@@ -22,7 +22,7 @@ Right after you create the database a prompt should come up for creating a table
 
 ![Create Table](readimages/third.PNG)
 
-Name the table Answers and a column called correct of type integer.  Your prompt should look like this if you filled out the fields correctly:
+Name the table Answers and create a column called correct of type integer.  Your prompt should look like this if you filled out the fields correctly:
 
 ![Create Table](readimages/fourth.PNG)
 
